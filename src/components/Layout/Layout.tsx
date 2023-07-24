@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 import DisplayNumbers from '../DisplayNumbers';
 import Algorithm from '../../Utils/Algorithm';
 
@@ -8,10 +9,11 @@ const Layout = (props: any) => {
     const [sortingSteps, setSortingSteps] = useState<number[][]>([]);
     const [isSorting, setIsSorting] = useState<boolean>(false);
     const [stepIndex, setStepIndex] = useState<number>(0);
+    const [inputValue, setInputValue] = useState<number>(0);
 
     const generateNumbersHadler = () => {
         setSortingArray([]);
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < inputValue; i++) {
             setSortingArray((prevArray) => [...prevArray, Math.floor(Math.random() * 100)]);
         }
         setIsSorting(false);
@@ -44,6 +46,7 @@ const Layout = (props: any) => {
     return (
         <div className="container">
             <DisplayNumbers numbers={sortingArray}></DisplayNumbers>
+            <Input value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(Number(e.target.value))}></Input>
             <Button onClick={generateNumbersHadler} text={"Generate Numbers"}></Button>
             <Button onClick={sortingNumbersHandler} text={"Start Sorting"}></Button>
             <Button onClick={stopSortingHandler} text={"Stop Sorting"}></Button>
