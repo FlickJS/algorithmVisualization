@@ -11,14 +11,16 @@
     position: relative;
     width: 50px;
     margin: 0 5px;
-    background-color: #7fb5ee;
+    background-color: #0510af;
     max-height: 100px; 
+    margin-bottom: 30px;
 }
 
 .number__label {
     position: absolute;
-    bottom: 0;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
     color: rgb(0, 0, 0);
+    font-weight: bold;
 }
