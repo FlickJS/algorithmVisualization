@@ -3,16 +3,16 @@
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 5px;
-    height: auto; /* zezwól na dynamiczną wysokość */
+    height: auto; 
     margin:50px;
 }
 
 .numberBar {
     position: relative;
-    width: 50px; /* dowolna wartość */
-    margin: 0 5px; /* dowolna wartość */
-    background-color: #7fb5ee; /* dowolna wartość */
-    max-height: 100px; /* maksymalna wysokość prostokąta */
+    width: 50px;
+    margin: 0 5px;
+    background-color: #7fb5ee;
+    max-height: 100px; 
 }
 
 .number__label {
