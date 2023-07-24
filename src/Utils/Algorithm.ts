@@ -1,7 +1,6 @@
-// Plik Algorithm.ts
 class Algorithm {
     private array: number[];
-    private steps: number[][] = []; // kroki
+    private steps: number[][] = []; 
 
     constructor(array: number[]) {
         this.array = array;
@@ -11,7 +10,6 @@ class Algorithm {
         if (left < right) {
             let pivotIndex = this.partition(left, right);
 
-            // recursively sort elements on the left and right of the pivot
             this.quickSort(left, pivotIndex - 1);
             this.quickSort(pivotIndex + 1, right);
         }
@@ -30,7 +28,7 @@ class Algorithm {
         }
 
         this.swap(pivotIndex, right);
-        this.steps.push([...this.array]); // dodajemy krok
+        this.steps.push([...this.array]); 
         return pivotIndex;
     }
 
