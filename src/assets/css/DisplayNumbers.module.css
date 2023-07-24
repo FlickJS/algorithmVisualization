@@ -1,0 +1,24 @@
+.displayNumbers {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+    height: auto; /* zezwól na dynamiczną wysokość */
+    margin:50px;
+}
+
+.numberBar {
+    position: relative;
+    width: 50px; /* dowolna wartość */
+    margin: 0 5px; /* dowolna wartość */
+    background-color: #7fb5ee; /* dowolna wartość */
+    max-height: 100px; /* maksymalna wysokość prostokąta */
+}
+
+.number__label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+}
