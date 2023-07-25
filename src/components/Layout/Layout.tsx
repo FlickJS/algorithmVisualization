@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import DisplayNumbers from '../DisplayNumbers';
-import Algorithm from '../../Utils/Algorithm';
+import Algorithm from '../../utils/Algorithm';
 
 import classes from '../../assets/css/Layout.module.css';
 
-const Layout = (props: any) => {
+const Layout = () => {
     const [sortingArray, setSortingArray] = useState<number[]>([]);
     const [sortingSteps, setSortingSteps] = useState<number[][]>([]);
     const [isSorting, setIsSorting] = useState<boolean>(false);
@@ -46,16 +46,16 @@ const Layout = (props: any) => {
     }, [isSorting, stepIndex, sortingSteps]);
 
     return (
-        <div>
+        <React.Fragment>
             <DisplayNumbers numbers={sortingArray}></DisplayNumbers>
             <div className={classes.container__layout}>
                 <span className={classes.main__text}>Enter amount of numbers to be generated:</span>
-                <Input value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(Number(e.target.value))}></Input>
+                <Input value={inputValue} onChange={setInputValue}></Input>
                 <Button onClick={generateNumbersHadler} text={"Generate Numbers"}></Button>
                 <Button onClick={sortingNumbersHandler} text={"Start Sorting"}></Button>
                 <Button onClick={stopSortingHandler} text={"Stop Sorting"}></Button>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 

@@ -4,10 +4,10 @@ import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <Layout />
-    </div>
+    </React.Fragment>
   );
 }
 
