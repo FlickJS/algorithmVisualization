@@ -1,14 +1,10 @@
 import React from 'react';
 import classes from '../assets/css/DisplayNumbers.module.css';
 
-type DisplayNumbersProps = {
-    numbers: number[];
-};
-
-const DisplayNumbers = (props: DisplayNumbersProps) => {
+const DisplayNumbers: React.FC<{ numbers: number[] }> = ({ numbers }) => {
     return (
         <div className={classes.displayNumbers}>
-            {props.numbers.map((number: number, index: number) => (
+            {numbers.map((number, index) => (
                 <div key={index} className={classes.numberBar} style={{height: `${number}px`}}>
                     <span className={classes.number__label}>{number}</span>
                 </div>
